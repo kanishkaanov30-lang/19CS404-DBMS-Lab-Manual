@@ -59,11 +59,27 @@ Key Differences:
 - Inside the procedure, compute the square of the input number.
 - Use `DBMS_OUTPUT.PUT_LINE` to display the result.
 - Call the procedure with a number as input.
+- 
 
 **Expected Output:**  
 Square of 6 is 36
+PROGRAM
+```
+SET SERVEROUTPUT ON;
 
----
+CREATE OR REPLACE PROCEDURE find_square(n IN NUMBER)
+IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Square of ' || n || ' is ' || (n * n));
+END;
+/
+
+EXEC find_square(6);
+```
+
+OUTPUT
+<img width="497" height="256" alt="image" src="https://github.com/user-attachments/assets/29d54a54-7e53-4df8-9777-a35dabcdff5f" />
+
 
 ## 2. Write a PL/SQL Function to Return the Factorial of a Number
 
@@ -76,8 +92,34 @@ Square of 6 is 36
 
 **Expected Output:**  
 Factorial of 5 is 120
+PROGRAM
+```
+SET SERVEROUTPUT ON;
 
----
+CREATE OR REPLACE FUNCTION get_factorial(n IN NUMBER)
+RETURN NUMBER
+IS
+    fact NUMBER := 1;
+BEGIN
+    FOR i IN 1..n LOOP
+        fact := fact * i;
+    END LOOP;
+
+    RETURN fact;
+END;
+/
+
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Factorial of 5 is ' || get_factorial(5));
+END;
+/
+```
+
+OUTPUT
+<img width="675" height="240" alt="image" src="https://github.com/user-attachments/assets/b63b3846-b574-4c7e-88ef-299e9b702e5e" />
+
+
+
 
 ## 3. Write a PL/SQL Procedure to Check Whether a Number is Even or Odd
 
@@ -90,7 +132,27 @@ Factorial of 5 is 120
 **Expected Output:**  
 12 is Even
 
----
+PROGRAM
+```
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE PROCEDURE check_even_odd(n IN NUMBER)
+IS
+BEGIN
+    IF MOD(n, 2) = 0 THEN
+        DBMS_OUTPUT.PUT_LINE(n || ' is Even');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(n || ' is Odd');
+    END IF;
+END;
+/
+
+EXEC check_even_odd(12);
+```
+
+OUTPUT
+<img width="466" height="212" alt="image" src="https://github.com/user-attachments/assets/c24f4eaf-48cb-4032-b728-5a4c003207e8" />
+
 
 ## 4. Write a PL/SQL Function to Return the Reverse of a Number
 
@@ -104,7 +166,33 @@ Factorial of 5 is 120
 **Expected Output:**  
 Reversed number of 1234 is 4321
 
----
+PROGRAM
+```
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE FUNCTION reverse_number(n IN NUMBER)
+RETURN NUMBER
+IS
+    num NUMBER := n;
+    rev NUMBER := 0;
+BEGIN
+    WHILE num > 0 LOOP
+        rev := (rev * 10) + MOD(num, 10);
+        num := TRUNC(num / 10);
+    END LOOP;
+
+    RETURN rev;
+END;
+/
+
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Reversed number of 1234 is ' || reverse_number(1234));
+END;
+/
+```
+OUTPUT
+<img width="753" height="260" alt="image" src="https://github.com/user-attachments/assets/2cb2fe53-4c20-4b8a-acba-a5e398706e90" />
+
 
 ## 5. Write a PL/SQL Procedure to Display the Multiplication Table of a Number
 
@@ -114,13 +202,35 @@ Reversed number of 1234 is 4321
 - Use a loop from 1 to 10 to multiply the input number.
 - Display the multiplication results using `DBMS_OUTPUT.PUT_LINE`.
 
-**Expected Output:**  
+**Expected Output:**
 Multiplication table of 5:  
 5 x 1 = 5  
 5 x 2 = 10  
 5 x 3 = 15  
 ...  
 5 x 10 = 50
+
+PROGRAM
+```
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE PROCEDURE print_table(n IN NUMBER)
+IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Multiplication table of ' || n || ':');
+
+    FOR i IN 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE(n || ' x ' || i || ' = ' || (n * i));
+    END LOOP;
+END;
+/
+
+EXEC print_table(5);
+```
+
+OUTPUT
+<img width="432" height="365" alt="image" src="https://github.com/user-attachments/assets/2c7a9c6b-9549-41a5-b71e-8390fe2323d4" />
+
 
 ## RESULT
 Thus, the PL/SQL programs using procedures and functions were written, compiled, and executed successfully.
