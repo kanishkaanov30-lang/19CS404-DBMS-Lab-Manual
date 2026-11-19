@@ -63,7 +63,7 @@ Key Differences:
 
 **Expected Output:**  
 Square of 6 is 36
-PROGRAM
+### **PROGRAM**
 ```
 SET SERVEROUTPUT ON;
 
@@ -77,7 +77,7 @@ END;
 EXEC find_square(6);
 ```
 
-OUTPUT
+### **OUTPUT**
 <img width="497" height="256" alt="image" src="https://github.com/user-attachments/assets/29d54a54-7e53-4df8-9777-a35dabcdff5f" />
 
 
@@ -92,7 +92,7 @@ OUTPUT
 
 **Expected Output:**  
 Factorial of 5 is 120
-PROGRAM
+### **PROGRAM**
 ```
 SET SERVEROUTPUT ON;
 
@@ -132,7 +132,7 @@ OUTPUT
 **Expected Output:**  
 12 is Even
 
-PROGRAM
+### **PROGRAM**
 ```
 SET SERVEROUTPUT ON;
 
@@ -150,7 +150,7 @@ END;
 EXEC check_even_odd(12);
 ```
 
-OUTPUT
+### **OUTPUT**
 <img width="466" height="212" alt="image" src="https://github.com/user-attachments/assets/c24f4eaf-48cb-4032-b728-5a4c003207e8" />
 
 
@@ -166,7 +166,7 @@ OUTPUT
 **Expected Output:**  
 Reversed number of 1234 is 4321
 
-PROGRAM
+### **PROGRAM**
 ```
 SET SERVEROUTPUT ON;
 
@@ -190,7 +190,7 @@ BEGIN
 END;
 /
 ```
-OUTPUT
+### **OUTPUT**
 <img width="753" height="260" alt="image" src="https://github.com/user-attachments/assets/2cb2fe53-4c20-4b8a-acba-a5e398706e90" />
 
 
@@ -210,7 +210,7 @@ Multiplication table of 5:
 ...  
 5 x 10 = 50
 
-PROGRAM
+###  **PROGRAM**
 ```
 SET SERVEROUTPUT ON;
 
@@ -228,7 +228,7 @@ END;
 EXEC print_table(5);
 ```
 
-OUTPUT
+###  **OUTPUT**
 <img width="432" height="365" alt="image" src="https://github.com/user-attachments/assets/2c7a9c6b-9549-41a5-b71e-8390fe2323d4" />
 
 
